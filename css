@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #2c3e50;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: 10px;
+}
+
+.rain-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.raindrop {
+    position: absolute;
+    bottom: 100%;
+    width: 2px;
+    height: 10px;
+    background-color: #3498db;
+    opacity: 0.5;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+.button-timbul {
+    padding: 15px 30px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px #2980b9;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.button-timbul:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px #2980b9;
+}
+
+.button-timbul:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px #2980b9;
+}
+
+.box-container {
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    width: 90%;
+    position: absolute;
+    bottom: 20px;
+}
+
+.box {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+    background-color: #ddd;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
